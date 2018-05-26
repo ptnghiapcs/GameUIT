@@ -1,5 +1,6 @@
 package apcs.gameuit;
 
+import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -48,9 +49,15 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
+
+        boolean lastPageChange = false;
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+            int lastIdx = sliderApdater.getCount();
+            if (position == lastIdx-1) {
+                Intent intent = new Intent(IntroActivity.this,PictureActivity.class);
+                startActivity(intent);
+            }
         }
 
         @Override
@@ -60,6 +67,7 @@ public class IntroActivity extends AppCompatActivity {
 
         @Override
         public void onPageScrollStateChanged(int state) {
+            int lastIdx = sliderApdater.getCount() - 1;
 
         }
     };
