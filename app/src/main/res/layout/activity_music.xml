@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MusicActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:orientation="horizontal">
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="#ffffff"
+                android:textSize="35dp"
+                android:id="@+id/title_id"/>
+
+        </LinearLayout>
+
+        <View
+            android:background="#f2eff4"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            />
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigationViewMusic"
+            android:background="#f5a623"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/navigation" ></android.support.design.widget.BottomNavigationView>
+
+        <ListView
+            android:orientation="vertical"
+            android:id="@+id/listViewMusics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </ListView>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
