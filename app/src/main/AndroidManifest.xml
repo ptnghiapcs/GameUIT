@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainMenuActivity" />
-        <activity android:name=".Pictures" />
+        <activity android:name=".PictureActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".DairyActivity">
         </activity>
         <activity android:name=".IntroActivity">
@@ -23,13 +29,6 @@
         </activity>
         <activity android:name=".MusicActivity">
 
-        </activity>
-        <activity android:name=".PictureActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

@@ -2,13 +2,54 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dairymain"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DairyActivity"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:id="@+id/dairymain">
+    tools:context=".DairyActivity">
 
+  <ImageView
+      android:id="@+id/topTitleholder"
+      android:layout_width="match_parent"
+      android:layout_height="180px"
+      android:layout_margin="0dp"
+      android:src="@drawable/toptitleyellow" />
 
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:paddingBottom="5dp"
+      android:paddingTop="5dp">
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/photobtn" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/music" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/diary" />
+
+  </LinearLayout>
+
+  <ListView
+      android:id="@+id/dairyListview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20sp"></ListView>
 
 
 </LinearLayout>

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -29,7 +30,9 @@ public class MusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        set_title_color();
+        initNavHandler();
+
+        //set_title_color();
         getMusicArr();
 
         MusicAdapter musicAdapter=new MusicAdapter(MusicActivity.this,R.layout.musicrowlayout,musicArr);
@@ -83,12 +86,44 @@ public class MusicActivity extends AppCompatActivity {
 
     }
 
-    private void set_title_color () {
+
+
+    private void initNavHandler() {
+        ImageButton photoBtn = findViewById(R.id.imageButton);
+        ImageButton musicBtn = findViewById(R.id.imageButton2);
+        ImageButton diaryBtn = findViewById(R.id.imageButton3);
+
+        photoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MusicActivity.this,PictureActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        musicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                return;
+            }
+        });
+
+        diaryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(MusicActivity.this, DairyActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+    }
+
+    /*private void set_title_color () {
         TextView tv = (TextView) findViewById(R.id.title_id);
         String chill = "<font color = #f5a623> CHILL </font>";
         String me = "<font color = #000000> ME' </font>";
         tv.setText(Html.fromHtml(chill + me));
-    }
+    }*/
 
     void getMusicArr()
     {

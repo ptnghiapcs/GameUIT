@@ -3,7 +3,7 @@ package apcs.gameuit;
 public class MusicInfo {
     String musicname;
     int resource;
-    int musicphoto=R.drawable.musicicon;
+    int musicphoto=R.drawable.goldisk;
 
     MusicInfo(String name,int res)
     {

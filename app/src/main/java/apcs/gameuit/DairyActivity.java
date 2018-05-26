@@ -2,6 +2,7 @@ package apcs.gameuit;
 
 import android.app.ActionBar;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -9,29 +10,72 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
 import java.security.AccessController;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 
 public class DairyActivity extends AppCompatActivity {
 
+    public static ArrayList<DairyEntry> dairyArr=new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dairy);
-        
+
+        initNavHandler();
+
+
+
+
+
         readStoriesFromDatabase();
+    }
+
+    private void initNavHandler() {
+        ImageButton photoBtn = findViewById(R.id.imageButton);
+        ImageButton musicBtn = findViewById(R.id.imageButton2);
+        ImageButton diaryBtn = findViewById(R.id.imageButton3);
+
+        photoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DairyActivity.this,PictureActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        musicBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent myIntent = new Intent(DairyActivity.this, MusicActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+        diaryBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                return;
+            }
+        });
+
     }
 
     private void readStoriesFromDatabase() {
@@ -64,67 +108,27 @@ public class DairyActivity extends AppCompatActivity {
         //dairy.execSQL("DROP TABLE dairy");
 
         Cursor cr = dairy.rawQuery("SELECT * FROM dairy",null);
-        cr.moveToNext();
+        getArrayDairy(cr);
 
-        displayThisDairy(cr);
-
-
-        //String myDate
+        ListView dairyListView=(ListView)findViewById(R.id.dairyListview);
+        DairyAdapter dairyAdapter=new DairyAdapter(DairyActivity.this,R.layout.dairyrowlayout,dairyArr);
+        dairyListView.setAdapter(dairyAdapter);
 
     }
 
-    private void displayThisDairy(Cursor cr) {
+    private void getArrayDairy(Cursor cr) {
 
-        LinearLayout mainLayout = findViewById(R.id.dairymain);
+        while(cr.moveToNext())
+        {
+            String title = cr.getString(cr.getColumnIndex("TITLE"));
+            String date = cr.getString(cr.getColumnIndex("DATE"));
+            String imageName = cr.getString(cr.getColumnIndex("IMAGE"));
+            int imageID = getResources().getIdentifier(imageName , "drawable", getPackageName());
 
-        String title = cr.getString(cr.getColumnIndex("TITLE"));
-        String date = cr.getString(cr.getColumnIndex("DATE"));
-        String imageName = cr.getString(cr.getColumnIndex("IMAGE"));
-        int imageID = getResources().getIdentifier(imageName , "drawable", getPackageName());
-
-
-        CardView dairyCard = new CardView(this);
-
-        CardView.LayoutParams layoutParams = new CardView.LayoutParams(CardView.LayoutParams.WRAP_CONTENT,CardView.LayoutParams.WRAP_CONTENT);
-        dairyCard.setLayoutParams(layoutParams);
-
-        LinearLayout cardLinearLayout = new LinearLayout(this);
-        cardLinearLayout.setOrientation(LinearLayout.VERTICAL);
-
-        cardLinearLayout.setOrientation(LinearLayout.VERTICAL);
-        LinearLayout.LayoutParams linearLayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        cardLinearLayout.setLayoutParams(linearLayoutParams);
-
-        dairyCard.setRadius(15);
-        dairyCard.setPadding(25,25,25,25);
-        dairyCard.setMaxCardElevation(30f);
-
-        TextView titleBox = new TextView(this);
-        TextView dateBox = new TextView(this);
-        ImageView imageBox = new ImageView(this);
-
-        imageBox.setMaxHeight(100);
-        imageBox.setMaxWidth(100);
-        imageBox.setImageResource(imageID);
-
-        cardLinearLayout.addView(imageBox);
+            dairyArr.add(new DairyEntry(title,date,imageID));
+        }
 
 
-
-
-        titleBox.setText(title);
-        dateBox.setText(date);
-
-        titleBox.setTextSize(30f);
-
-        cardLinearLayout.addView(titleBox);
-        cardLinearLayout.addView(dateBox);
-
-        dairyCard.addView(cardLinearLayout);
-
-
-
-        mainLayout.addView(dairyCard);
 
     }
 
