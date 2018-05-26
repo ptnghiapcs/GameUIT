@@ -33,7 +33,7 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     public void addDotsIndicator(int position){
-        mDots = new TextView[3];
+        mDots = new TextView[4];
         mDotsLayout.removeAllViews();
 
         for (int i=0; i < mDots.length; i++){
@@ -53,16 +53,17 @@ public class IntroActivity extends AppCompatActivity {
         boolean lastPageChange = false;
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            int lastIdx = sliderApdater.getCount();
-            if (position == lastIdx-1) {
-                Intent intent = new Intent(IntroActivity.this,PictureActivity.class);
-                startActivity(intent);
-            }
+
         }
 
         @Override
         public void onPageSelected(int position) {
             addDotsIndicator(position);
+            int lastIdx = sliderApdater.getCount();
+            if (position == lastIdx-1) {
+                Intent intent = new Intent(IntroActivity.this,PictureActivity.class);
+                startActivity(intent);
+            }
         }
 
         @Override

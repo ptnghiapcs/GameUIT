@@ -28,20 +28,23 @@ public class SliderAdapter extends PagerAdapter {
     public int[] slide_images = {
             R.drawable.stop_hand,
             R.drawable.brain,
-            R.drawable.boyandgirl
+            R.drawable.introicon3,
+            R.drawable.toptitleyellow
     };
 
     public String[] slide_headings = {
             "VIOLENCE IS BAD",
             "REDUCE STRESS",
-            "CHILLME MEDITATION"
+            "CHILLME MEDITATION",
+            ""
     };
 
     public String[] slide_desc = {
             "Lorem ipsum texts dolor sit amet consetetur amet consetetur texts dolor sit Lorem ipsum texts dolor sit " +
                     "Lorem ipsum texts dolor sit amet consetetur amet consetetur texts dolor sit Lorem ipsum texts dolor sit",
             "Lorem ipsum texts dolor sit amet consetetur amet consetetur texts dolor sit Lorem ipsum texts dolor sit ",
-            "Lorem ipsum texts dolor sit amet consetetur amet consetetur texts dolor sit Lorem ipsum texts dolor sit "
+            "Lorem ipsum texts dolor sit amet consetetur amet consetetur texts dolor sit Lorem ipsum texts dolor sit ",
+            ""
     };
     @Override
     public int getCount() {
