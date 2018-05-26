@@ -3,10 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".DairyActivity"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:id="@+id/dairymain">
+
+  <ListView
+      android:layout_marginTop="500px"
+      android:id="@+id/dairyListview"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"></ListView>
+
 
 
 
