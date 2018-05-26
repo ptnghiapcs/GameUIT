@@ -6,11 +6,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
+
+import java.security.AccessController;
 
 
 public class DairyActivity extends AppCompatActivity {
@@ -24,10 +28,9 @@ public class DairyActivity extends AppCompatActivity {
     }
 
     private void readStoriesFromDatabase() {
-        SQLiteDatabase dairy = openOrCreateDatabase(
-                "main", MODE_PRIVATE,null);
+        MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
 
-        dairy.execSQL("CREATE TABLE IF NOT EXISTS dairy(ID INTEGER PRIMARY KEY, TILTE TEXT, CONTENT TEXT)");
+
 
         //dairy.execSQL("INSERT INTO dairy VALUES(1,'Fuck today', 'I fucking hate this stupid day')");
 
@@ -35,20 +38,31 @@ public class DairyActivity extends AppCompatActivity {
 
         if (cr.moveToFirst()){
             do {
-                String title = cr.getString(cr.getColumnIndex("TILTE"));
-                String content = cr.getString(cr.getColumnIndex("CONTENT"));
-                displayThisDairy(title,content);
+                displayThisDairy(cr);
             } while (cr.moveToNext());
             cr.close();
         }
 
     }
 
-    private void displayThisDairy(String title, String content) {
+    private void displayThisDairy(Cursor cr) {
+
+        LinearLayout mainLayout = findViewById(R.id.dairymain);
+
+        String title = cr.getString(cr.getColumnIndex("TILTE"));
+        String content = cr.getString(cr.getColumnIndex("CONTENT"));
+
 
         CardView dairyCard = new CardView(this);
 
         CardView.LayoutParams layoutParams = new CardView.LayoutParams(CardView.LayoutParams.WRAP_CONTENT,CardView.LayoutParams.WRAP_CONTENT);
+        dairyCard.setLayoutParams(layoutParams);
+
+        LinearLayout cardLinearLayout = new LinearLayout(this);
+
+        cardLinearLayout.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout.LayoutParams linearLayoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        cardLinearLayout.setLayoutParams(linearLayoutParams);
 
         dairyCard.setRadius(15);
         dairyCard.setPadding(25,25,25,25);
@@ -60,7 +74,16 @@ public class DairyActivity extends AppCompatActivity {
         titleBox.setText(title);
         contentBox.setText(content);
 
+        titleBox.setTextSize(30f);
 
+        cardLinearLayout.addView(titleBox);
+        cardLinearLayout.addView(contentBox);
+
+        dairyCard.addView(cardLinearLayout);
+
+
+
+        mainLayout.addView(dairyCard);
 
     }
 
