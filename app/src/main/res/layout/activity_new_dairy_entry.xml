@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".NewDairyEntryActivity"
     android:orientation="vertical">
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/newdairytitle"/>
 
     <TextView
         android:layout_width="600sp"
@@ -17,7 +22,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/newStoryTitleInput"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/newStoryInput"
         />
+
 
 </LinearLayout>
