@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/topTitleholder"
         android:layout_width="match_parent"
-        android:layout_height="180px"
+        android:layout_height="70sp"
         android:layout_margin="0dp"
         android:src="@drawable/toptitleyellow" />
 
@@ -60,7 +60,8 @@
         android:orientation="vertical"
         android:id="@+id/listViewPictures"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp">
     </ListView>
 
 </LinearLayout>

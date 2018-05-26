@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">pictures</string>
+    <string name="app_name">ChillMe</string>
     <string-array name="options">
         <item> Memes Pictures</item>
         <item> Sweet Pictures</item>
