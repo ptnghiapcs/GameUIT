@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".Pictures" />
-        <activity android:name=".DairyActivity">
+        <activity android:name=".DairyActivity"/>
+        <activity android:name=".IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
