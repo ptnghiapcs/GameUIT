@@ -14,15 +14,11 @@
         android:orientation="horizontal">
        >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:background="#ffffff"
-            android:textStyle="bold"
-            android:textSize="35dp"
-            android:id="@+id/title_id"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:id="@+id/topTitleholder"
+            android:src="@drawable/toptitleyellow"/>
 
     </LinearLayout>
 
@@ -33,7 +29,6 @@
         />
 
     <android.support.design.widget.BottomNavigationView
-        android:background="#f5a623"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

@@ -16,15 +16,10 @@
             android:orientation="horizontal">
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="#ffffff"
-                android:textSize="35dp"
-                android:id="@+id/title_id"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180px"
+                android:src="@drawable/toptitlewhite"/>
 
         </LinearLayout>
 
@@ -36,7 +31,6 @@
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigationViewMusic"
-            android:background="#f5a623"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -46,9 +40,12 @@
 
         <ListView
             android:orientation="vertical"
+            android:layout_marginTop="20sp"
             android:id="@+id/listViewMusics"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:dividerHeight="0dp">
         </ListView>
     </LinearLayout>
 

@@ -29,7 +29,7 @@ public class MusicActivity extends AppCompatActivity implements BottomNavigation
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music);
 
-        set_title_color();
+        //set_title_color();
         getMusicArr();
 
         MusicAdapter musicAdapter=new MusicAdapter(MusicActivity.this,R.layout.musicrowlayout,musicArr);
@@ -85,12 +85,12 @@ public class MusicActivity extends AppCompatActivity implements BottomNavigation
 
     }
 
-    private void set_title_color () {
+    /*private void set_title_color () {
         TextView tv = (TextView) findViewById(R.id.title_id);
         String chill = "<font color = #f5a623> CHILL </font>";
         String me = "<font color = #000000> ME' </font>";
         tv.setText(Html.fromHtml(chill + me));
-    }
+    }*/
 
     void getMusicArr()
     {

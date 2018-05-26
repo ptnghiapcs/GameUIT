@@ -18,19 +18,19 @@ public class PictureActivity extends AppCompatActivity implements BottomNavigati
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        set_title_color();
+        //set_title_color();
         BottomNavigationView navigation =  (BottomNavigationView) findViewById(R.id.navigationView);
         navigation.setOnNavigationItemSelectedListener(this);
 
 
 
     }
-    private void set_title_color () {
+    /*private void set_title_color () {
         TextView tv = (TextView) findViewById(R.id.title_id);
         String chill = "<font color = #f5a623> CHILL </font>";
         String me = "<font color = #000000> ME' </font>";
         tv.setText(Html.fromHtml(chill + me));
-    }
+    }*/
     private boolean loadFragment(Fragment fragment)
     {
         if(fragment!=null)
