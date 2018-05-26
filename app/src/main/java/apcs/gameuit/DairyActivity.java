@@ -1,6 +1,7 @@
 package apcs.gameuit;
 
 import android.app.ActionBar;
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,9 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.security.AccessController;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class DairyActivity extends AppCompatActivity {
@@ -31,17 +35,21 @@ public class DairyActivity extends AppCompatActivity {
         MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
 
 
-
         //dairy.execSQL("INSERT INTO dairy VALUES(1,'Fuck today', 'I fucking hate this stupid day')");
 
-        Cursor cr = dairy.rawQuery("SELECT * FROM dairy",null);
+        //Cursor cr = dairy.rawQuery("SELECT * FROM dairy",null);
 
-        if (cr.moveToFirst()){
-            do {
-                displayThisDairy(cr);
-            } while (cr.moveToNext());
-            cr.close();
-        }
+       // CREATE TABLE dairy(ID INTEGER PRIMARY KEY, TITLE TEXT,STORY TEXT ,CONTENT TEXT,DATE TEXT, IMAGE TEXT)
+
+        ContentValues values = new ContentValues();
+        values.put("TITLE","Fuck my life");
+        values.put("STORY","AAAAAAAAAAAAAAAA");
+        values.put("CONTENT","FUCKKKKKKKKKKK");
+        values.put("IMAGE","cute15");
+
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
+        //String myDate
 
     }
 
@@ -86,6 +94,5 @@ public class DairyActivity extends AppCompatActivity {
         mainLayout.addView(dairyCard);
 
     }
-
 
 }

@@ -18,7 +18,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE dairy(ID INTEGER PRIMARY KEY, TILTE TEXT,STORY TEXT ,CONTENT TEXT,DATE TEXT, IMAGE TEXT)");
+        db.execSQL("CREATE TABLE dairy(TITLE TEXT,STORY TEXT ,CONTENT TEXT,DATE TEXT, IMAGE TEXT)");
     }
 
     @Override
