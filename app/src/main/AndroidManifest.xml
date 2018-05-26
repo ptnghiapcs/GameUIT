@@ -11,13 +11,14 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".Pictures" />
-        <activity android:name=".DairyActivity"/>
-        <activity android:name=".IntroActivity">
+        <activity android:name=".DairyActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".IntroActivity">
         </activity>
         <activity android:name=".NewDairyEntryActivity" />
         <activity android:name=".ViewADairyEntryActivity"></activity>
