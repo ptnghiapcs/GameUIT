@@ -9,16 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainMenuActivity">
+        <activity android:name=".MainMenuActivity" />
+        <activity android:name=".Pictures" />
+        <activity android:name=".DairyActivity">
+        </activity>
+        <activity android:name=".IntroActivity">
+        </activity>
+        <activity android:name=".NewDairyEntryActivity">
 
         </activity>
+        <activity android:name=".ViewADairyEntryActivity">
 
-        <activity android:name=".Pictures" >
+        </activity>
+        <activity android:name=".MusicActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".PictureActivity">
+
         </activity>
     </application>
 
