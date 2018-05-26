@@ -15,6 +15,4 @@
         android:id="@+id/navigation_stories"
         android:title="Stories" />
 
-
-
 </menu>

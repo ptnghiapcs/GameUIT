@@ -31,19 +31,4 @@
         android:layout_width="match_parent"
         android:layout_height="3dp"
         />
-
-    <android.support.design.widget.BottomNavigationView
-        android:background="#f5a623"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/navigationView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:menu="@menu/navigation" ></android.support.design.widget.BottomNavigationView>
-
-    <FrameLayout
-        android:id="@+id/myfragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
 </LinearLayout>

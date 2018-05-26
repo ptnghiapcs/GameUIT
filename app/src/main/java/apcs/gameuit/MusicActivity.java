@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MusicActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class MusicActivity extends AppCompatActivity {
 
     ArrayList<MusicInfo> musicArr=new ArrayList<>();
     @Override
@@ -35,8 +35,6 @@ public class MusicActivity extends AppCompatActivity implements BottomNavigation
         MusicAdapter musicAdapter=new MusicAdapter(MusicActivity.this,R.layout.musicrowlayout,musicArr);
         ListView musicList=(ListView)findViewById(R.id.listViewMusics);
         musicList.setAdapter(musicAdapter);
-        BottomNavigationView navigation =  (BottomNavigationView) findViewById(R.id.navigationViewMusic);
-        navigation.setOnNavigationItemSelectedListener(this);
 
         final Dialog mydialog=new Dialog(MusicActivity.this);
         mydialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -104,21 +102,4 @@ public class MusicActivity extends AppCompatActivity implements BottomNavigation
         musicArr.add(new MusicInfo("Soft",R.raw.soft));
         musicArr.add(new MusicInfo("Soft 2",R.raw.soft2));
     }
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment fragment=null;
-        switch (item.getItemId())
-        {
-            case R.id.navigation_photos:
-                Intent photos=new Intent(MusicActivity.this,Pictures.class);
-                startActivity(photos);
-                break;
-            case R.id.navigation_musics:
-                Intent musics=new Intent(MusicActivity.this,MusicActivity.class);
-                startActivity(musics);
-                break;
-
-        }
-        return false;
-    }
-
 }

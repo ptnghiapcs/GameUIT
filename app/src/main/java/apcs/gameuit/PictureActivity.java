@@ -11,7 +11,7 @@ import android.text.Html;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class PictureActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class PictureActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,6 @@ public class PictureActivity extends AppCompatActivity implements BottomNavigati
         setContentView(R.layout.activity_main);
 
         set_title_color();
-        BottomNavigationView navigation =  (BottomNavigationView) findViewById(R.id.navigationView);
-        navigation.setOnNavigationItemSelectedListener(this);
 
 
 
@@ -31,37 +29,4 @@ public class PictureActivity extends AppCompatActivity implements BottomNavigati
         String me = "<font color = #000000> ME' </font>";
         tv.setText(Html.fromHtml(chill + me));
     }
-    private boolean loadFragment(Fragment fragment)
-    {
-        if(fragment!=null)
-        {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.myfragment,fragment)
-                    .commit();
-            return true;
-        }
-        return false;
-
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment fragment=null;
-        switch (item.getItemId())
-        {
-            case R.id.navigation_photos:
-                Intent photos=new Intent(this,Pictures.class);
-                startActivity(photos);
-                break;
-            case R.id.navigation_musics:
-                Intent musics=new Intent(this,MusicActivity.class);
-                startActivity(musics);
-                break;
-
-        }
-        return false;
-    }
-
-
 }

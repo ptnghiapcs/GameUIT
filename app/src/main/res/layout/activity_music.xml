@@ -9,41 +9,31 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="5dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"><![CDATA[
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="#ffffff"
-                android:textSize="35dp"
-                android:id="@+id/title_id"/>
-
-        </LinearLayout>
+        ]]></LinearLayout>
 
         <View
             android:background="#f2eff4"
             android:layout_width="match_parent"
             android:layout_height="3dp"
             />
-
-        <android.support.design.widget.BottomNavigationView
-            android:id="@+id/navigationViewMusic"
-            android:background="#f5a623"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/navigation" ></android.support.design.widget.BottomNavigationView>
-
         <ListView
             android:orientation="vertical"
             android:id="@+id/listViewMusics"
