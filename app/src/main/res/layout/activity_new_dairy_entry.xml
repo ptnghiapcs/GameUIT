@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewDairyEntryActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:src="@drawable/toptitle" />
+        <EditText
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:paddingLeft="20dp"
+            android:background="@drawable/title"
+            android:text="Your title"
+            android:id="@+id/newdairytitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <EditText
+        android:hint="Write something heere"
+        android:layout_marginLeft="40px"
+        android:layout_marginBottom="40px"
+        android:layout_marginRight="40px"
+        android:paddingLeft="20px"
+        android:paddingTop="20px"
+        android:textSize="15dp"
+        android:gravity="left|top"
+        android:background="@drawable/boundlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

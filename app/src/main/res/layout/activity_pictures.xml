@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pictures">
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <Spinner
+           android:id="@+id/spinner"
+           android:entries="@array/options"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"></Spinner>
+
+       <Button
+           android:text="Select"
+           android:id="@+id/selectSpinner"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           />
+       <ListView
+           android:orientation="vertical"
+           android:id="@+id/listViewPictures"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+       </ListView>
+   </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
