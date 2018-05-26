@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">pictures</string>
+    <string-array name="options" >
+        <item> Memes Pictures</item>
+        <item> Sweet Pictures</item>
+        <item> Cute Pictures</item>
+    </string-array>
+</resources>
