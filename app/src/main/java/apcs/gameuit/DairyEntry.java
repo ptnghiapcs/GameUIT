@@ -7,7 +7,7 @@ public class DairyEntry {
 
     DairyEntry(String name, String date, int res)
     {
-        dairydate=name;
+        dairyname=name;
         dairydate=date;
         this.res=res;
     }

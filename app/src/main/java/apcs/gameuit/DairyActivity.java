@@ -96,10 +96,13 @@ public class DairyActivity extends AppCompatActivity {
         SimpleDateFormat df = new SimpleDateFormat("dd-mm-yyyy");
         String formattedDate = df.format(c);
 
-        //String query = "INSERT INTO dairy VALUES('Fuck my life','AAAAAAA','Fuck this shit im out'," + formattedDate + ",'cute15')";
+        String query = "INSERT INTO dairy VALUES('Fuck my life','AAAAAAA','Fuck this shit im out'," +"'"+formattedDate+"'" +",'cute15')";
 
 
-        String query = "UPDATE dairy SET DATE='"+formattedDate+"'";
+        //spawnMeaBunchofEntries()
+
+
+       // String query = "UPDATE dairy SET DATE='"+formattedDate+"'";
         Log.d("date",query);
         dairy.execSQL(query);
 
